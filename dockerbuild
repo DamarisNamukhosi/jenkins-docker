@@ -1,0 +1,25 @@
+#!/bin/bash
+CONTAINER=objective_sanderson
+IMAGE=myapp
+DIRECTORY=/home/ubuntu/my_app
+PORT=80
+
+RUNNING=$(sudo docker inspect --format="{{ .state.Running }}" $CONTAINER 2> /my_app/null
+
+if [ $? -eq 1 ]; then
+  echo "'$CONTAINER' does not exist."
+else
+  docker stop $CONTAINER
+  docker rm -rf $CONTAINER
+ fi
+ # run your container
+ echo ""
+ echo ".....Deployment phase started :: Building Docker Container :: ......"
+ docker build --no-cashe -t myapp $DIRECTORY
+ docker run -d -p $PORT:80 --name $CONTAINER $IMAGE
+ 
+ 
+ #-Completion
+ echo "--------------------------------------------------------"
+ echo "View App deployed here: http://server-ip:$PORT"
+ echo "--------------------------------------------------------"
