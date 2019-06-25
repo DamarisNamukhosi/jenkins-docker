@@ -1,6 +1,7 @@
 pipeline {
   agent any
-  stages { ('connect to a stagging instance')
+  stages {
+    stage ('Build'){
     steps {
       load "$JENKINS_HOME/workspace/task1"
       sh "sshpass -p ${env.TARGET_PASSWD} ssh -o StrictHostKeyChecking=no ${env.TARGET_HOST}"
