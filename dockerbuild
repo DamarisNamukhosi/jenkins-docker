@@ -1,5 +1,5 @@
 #!/bin/bash
-CONTAINER=objective_sanderson
+CONTAINER=myapp
 IMAGE=myapp
 DIRECTORY=/home/ubuntu/my_app
 PORT=80
