@@ -9,14 +9,14 @@ RUNNING=$(sudo docker inspect --format="{{ .state.Running }}" $CONTAINER 2> /my_
 if [ $? -eq 1 ]; then
   echo "'$CONTAINER' does not exist."
 else
-  docker stop $CONTAINER
-  docker rm -rf $CONTAINER
+  sudo docker stop $CONTAINER
+  sudo docker rm -rf $CONTAINER
  fi
  # run your container
- echo ""
- echo ".....Deployment phase started :: Building Docker Container :: ......"
- docker build --no-cashe -t myapp $DIRECTORY
- docker run -d -p 80:80 --name $CONTAINER $IMAGE
+  echo ""
+    echo ".....Deployment phase started :: Building Docker Container :: ......"
+    sudo docker build --no-cashe -t myapp $DIRECTORY
+    sudo docker run -d -p 80:80 --name $CONTAINER $IMAGE
  
  
  #-Completion
