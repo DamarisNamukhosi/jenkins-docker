@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages {
     steps {
-      load "$JENKINS_HOME/workspace/job1"
+      load "$JENKINS_HOME/workspace/task1"
       sh "sshpass -p ${env.TARGET_PASSWD} ssh -o StrictHostKeyChecking=no ${env.TARGET_HOST}"
       sh "sshpass -p ${env.TARGET_PASSWD} ssh -o StrictHostKeyChecking=no ${env.TARGET_HOST} 'hostname'"
       sh "sshpass -p ${env.TARGET_PASSWD} ssh -t -o StrictHostKeyChecking=no ${env.TARGET_HOST} 'mkdir -p ${env.DIR}'"
