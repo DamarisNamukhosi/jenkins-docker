@@ -4,7 +4,7 @@ IMAGE=myapp
 DIRECTORY=/home/ubuntu/my_app
 PORT=80
 
-RUNNING=$(sudo docker inspect --format="{{ .state.Running }}" $CONTAINER 2> /my_app/null
+RUNNING=$(sudo docker inspect --format="{{ .state.Running }}" $CONTAINER 2> /my_app
 
 if [ $? -eq 1 ]; then
   echo "'$CONTAINER' does not exist."
