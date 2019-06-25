@@ -2,9 +2,9 @@
 CONTAINER=myapp
 IMAGE=myapp
 DIRECTORY=/home/ubuntu/my_app
-PORT=4001
+PORT=80
 
-RUNNING=$(sudo docker inspect --format="{{ .state.Running }}" $CONTAINER 2> /my_app
+RUNNING=$(sudo docker inspect --format="{{ .state.Running }}" $CONTAINER 2> /my_app/null
 
 if [ $? -eq 1 ]; then
   echo "'$CONTAINER' does not exist."
@@ -16,10 +16,10 @@ else
  echo ""
  echo ".....Deployment phase started :: Building Docker Container :: ......"
  docker build --no-cashe -t myapp $DIRECTORY
- docker run -d -p $PORT:80 --name $CONTAINER $IMAGE
+ docker run -d -p 80:80 --name $CONTAINER $IMAGE
  
  
  #-Completion
  echo "--------------------------------------------------------"
- echo "View App deployed here: http://server-ip:$PORT"
+ echo "View App deployed here: http://server-ip:80"
  echo "--------------------------------------------------------"
