@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  stages {
+  stages { ('connect to a stagging instance')
     steps {
       load "$JENKINS_HOME/workspace/task1"
       sh "sshpass -p ${env.TARGET_PASSWD} ssh -o StrictHostKeyChecking=no ${env.TARGET_HOST}"
@@ -13,5 +13,6 @@ pipeline {
       echo "$JENKINS_HOME"
      
      }
+}
 }
 }
