@@ -16,8 +16,7 @@ else
   echo ""
     echo ".....Deployment phase started :: Building Docker Container :: ......"
     sudo docker build --no-cashe -t myapp $DIRECTORY
-    sudo docker run -d -p 80:80 --name $CONTAINER $IMAGE
- 
+    sudo docker run -d -p 80:80 --name myapp myapp
  
  #-Completion
  echo "--------------------------------------------------------"
